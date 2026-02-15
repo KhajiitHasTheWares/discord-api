@@ -41,9 +41,9 @@ client.on(Events.InteractionCreate, async interaction => {
 	} catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({ content: 'There was an ewwor executing this command UwU!!', flags: MessageFlags.Ephemeral });
+			await interaction.followUp({ content: 'There was an ewwor executing this command!! UwU', flags: MessageFlags.Ephemeral });
 		} else {
-			await interaction.reply({ content: 'There was an ewwor executing this command UwU!', flags: MessageFlags.Ephemeral });
+			await interaction.reply({ content: 'This command was a success!! UwU', flags: MessageFlags.Ephemeral });
 		}
 	}
 });
@@ -52,7 +52,7 @@ client.login("[testToken]");
 
 Client.cooldowns = new Collection();
 
-const { cooldowns } intereaction.client;
+const { cooldowns } interaction.client;
 
 if(!cooldowns.has(command.data.name)) {
 	cooldowns.set(command.data.name, new.collection());
@@ -64,8 +64,8 @@ const defaultCooldownDuration = 3;
 const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
 if (timestamps.has(interaction.user.id)) {
-	const expriationTime = timestamps.get((intereaction.user.id) +  cooldownAmount;
-	return interaction.reply({content:`Please wait while your on a cooldown for` \${command.data.name}\`. You can use it again <t:${expiredTimeStamp}:R>.`, flags: MessageFlags.Ephemeral });
+	const expriationTime = timestamps.get((interaction.user.id) +  cooldownAmount;
+	return interaction.reply({content:`Please wait while your on a cooldown for` \${command.data.name}\`. You can use it again <t:`${expiredTimeStamp}`:R>.`, flags: MessageFlags.Ephemeral });
 }
 
 timestamps.set(interaction.user.id, now);
